@@ -338,7 +338,7 @@ export async function handleSaveImport(importData) {
           rowNumber: a.rowNumber,
           anomalyType: a.anomalyType,
           description: a.description,
-          suggestedAction: a.suggestedAction,
+          suggestedAction: a.suggestedAction || 'Review and resolve entry',
           resolvedAction: a.resolvedAction || 'Applied default rules',
           status: 'RESOLVED'
         }
