@@ -12,10 +12,7 @@ if (process.env.NODE_ENV === 'production') {
     prisma = new PrismaClient({ adapter });
   } else {
     const { PrismaBetterSqlite3 } = require('@prisma/adapter-better-sqlite3');
-    const Database = require('better-sqlite3');
-    const dbFile = dbUrl.replace('file:', '');
-    const sqlite = new Database(dbFile);
-    const adapter = new PrismaBetterSqlite3(sqlite);
+    const adapter = new PrismaBetterSqlite3({ url: dbUrl });
     prisma = new PrismaClient({ adapter });
   }
 } else {
@@ -29,10 +26,7 @@ if (process.env.NODE_ENV === 'production') {
       global.prisma = new PrismaClient({ adapter });
     } else {
       const { PrismaBetterSqlite3 } = require('@prisma/adapter-better-sqlite3');
-      const Database = require('better-sqlite3');
-      const dbFile = dbUrl.replace('file:', '');
-      const sqlite = new Database(dbFile);
-      const adapter = new PrismaBetterSqlite3(sqlite);
+      const adapter = new PrismaBetterSqlite3({ url: dbUrl });
       global.prisma = new PrismaClient({ adapter });
     }
   }
