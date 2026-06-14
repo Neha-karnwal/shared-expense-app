@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SplitFlat: Shared Expenses App
 
-## Getting Started
+SplitFlat is a Next.js web application built to consolidate, cleanse, and resolve a messy roommate shared expense spreadsheet. It features interactive anomaly detection, timeline-based splits, and debt simplification.
 
-First, run the development server:
+## 🛠️ Technology Stack
+- **Framework**: Next.js (App Router, React 19)
+- **Database**: Relational Database via **Prisma ORM**
+  - **Local Development**: SQLite (via `better-sqlite3` driver adapter)
+  - **Production/Deployment**: PostgreSQL (via `pg` adapter, e.g. Neon or Supabase)
+- **Styling**: Scoped Vanilla CSS Modules
+- **Authentication**: Native session cookie authentication
+- **AI Tool Used**: Gemini 3.5 Flash via Antigravity Agent
 
+---
+
+## 🚀 Setup & Installation (Local Execution)
+
+Follow these steps to run the application locally on your machine:
+
+### 1. Install Dependencies
+Ensure you have Node.js (v18+) and npm installed. Run:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Configure Database & Migrations
+Initialize the SQLite database schema and generate the Prisma client:
+```bash
+# Generate Prisma Client
+npx prisma generate
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+# Create and apply migration database tables
+npx prisma migrate dev --name init
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3. Seed Database
+Seed the database with the default group ("Cozy Flat 404") and the 6 roommate users:
+```bash
+npx prisma db seed
+```
 
-## Learn More
+### 4. Run Development Server
+Start both the frontend and backend servers locally:
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🔑 Login Credentials for Roommates
 
-## Deploy on Vercel
+For convenience during evaluation, the login screen includes **Autofill Buttons** for all six flatmates. If logging in manually, use the following credentials:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Roommate | Username | Password | Tenancy Status |
+| :--- | :--- | :--- | :--- |
+| **Aisha** | `Aisha` | `aisha123` | Active since Feb 1, 2026 |
+| **Rohan** | `Rohan` | `rohan123` | Active since Feb 1, 2026 |
+| **Priya** | `Priya` | `priya123` | Active since Feb 1, 2026 |
+| **Meera** | `Meera` | `meera123` | Left flat on March 31, 2026 |
+| **Sam** | `Sam` | `sam123` | Joined flat on April 15, 2026 |
+| **Dev** | `Dev` | `dev123` | Guest (Weekend visits & March Trip) |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📂 Deliverables Included in this Repo
+- [README.md](file:///c:/Users/hp/OneDrive/Desktop/Assignment/README.md) — Setup guide.
+- [SCOPE.md](file:///c:/Users/hp/OneDrive/Desktop/Assignment/SCOPE.md) — Log of all 15 deliberate CSV anomalies, resolution policies, and the DB schema.
+- [DECISIONS.md](file:///c:/Users/hp/OneDrive/Desktop/Assignment/DECISIONS.md) — Log of architectural decisions, options, and justifications.
+- [AI_USAGE.md](file:///c:/Users/hp/OneDrive/Desktop/Assignment/AI_USAGE.md) — AI tools, prompts, and 3 concrete debugging cases.
+- `IMPORT_REPORT.md` (See below) — Produced by the importer on ingestion.
+
+---
+
+## 📝 How to Import the CSV via UI
+1. Start the server and navigate to [http://localhost:3000](http://localhost:3000).
+2. Click on the **Aisha Quick Login** button.
+3. Since the database is clean and has no expenses, you will be automatically redirected to the **CSV Import Wizard**.
+4. Drag and drop the `expenses_export.csv` file (located in the project root) or copy-paste its content, and click **Scan & Parse**.
+5. Step through the 7-step wizard to resolve names, missing payers, USD rates, percentage splits, tenancy timelines, duplicates, and conflicts.
+6. Click **Save & Import** to commit the cleaned dataset to the database.
+7. You will be redirected back to the dashboard, where you can view all roommate balances and itemized ledgers.

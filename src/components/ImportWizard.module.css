@@ -1,0 +1,289 @@
+.container {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Progress Bar */
+.progressContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.progressBar {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  width: 100%;
+  z-index: 1;
+  transform: translateY(-50%);
+  border-radius: 2px;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.stepDot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #1e293b;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--text-secondary);
+  z-index: 2;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.stepDotActive {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+  box-shadow: 0 0 12px 0 var(--primary-glow);
+}
+
+.stepDotDone {
+  background: var(--success);
+  border-color: var(--success);
+  color: white;
+}
+
+/* Step Layouts */
+.stepTitle {
+  font-size: 22px;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, white, var(--text-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stepDesc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+/* Upload Area */
+.uploadZone {
+  border: 2px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 48px;
+  text-align: center;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.01);
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.uploadZone:hover {
+  border-color: var(--primary);
+  background: rgba(99, 102, 241, 0.04);
+}
+
+.uploadIcon {
+  font-size: 48px;
+}
+
+.textArea {
+  width: 100%;
+  height: 180px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px;
+  color: white;
+  font-family: monospace;
+  font-size: 13px;
+  resize: vertical;
+}
+
+.textArea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* Name Variant Grid */
+.mappingGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 320px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.mappingRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.mappingArrow {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* Payer Dropdown Card */
+.resolutionList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.resolutionCard {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rowLabel {
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.cardDesc {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* Dual Comparison Card for Duplicates */
+.comparisonGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.compCard {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.compCardSelected {
+  border-color: var(--primary);
+  background: rgba(99, 102, 241, 0.05);
+  box-shadow: 0 0 16px 0 rgba(99, 102, 241, 0.1);
+}
+
+.compCardLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.compDetailItem {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  padding-bottom: 8px;
+}
+
+.compDetailLabel {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.compDetailValue {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.compActions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+/* Temporal Exclusions Grid */
+.timelineGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.timelineCard {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.exclusionList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.exclusionChip {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.02);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.exclusionChipActive {
+  background: rgba(244, 63, 94, 0.1);
+  border-color: var(--danger);
+  color: #fb7185;
+}
+
+/* Footer Navigation */
+.wizardFooter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 20px;
+}

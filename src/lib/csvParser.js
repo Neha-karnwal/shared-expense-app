@@ -1,5 +1,3 @@
-const { PrismaBetterSqlite3 } = require('@prisma/adapter-better-sqlite3');
-
 // Helper to parse a single CSV row, taking care of double quotes
 function parseCSVLine(line) {
   const result = [];

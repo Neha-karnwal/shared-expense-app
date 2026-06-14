@@ -1,0 +1,270 @@
+/* Debt Simplifier Component */
+.simplifierCard {
+  padding: 24px;
+}
+
+.simplifierHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.simplifierTitle {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-primary);
+}
+
+.paymentList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.paymentRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.paymentRow:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(99, 102, 241, 0.15);
+}
+
+.personCard {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.avatarDebtor {
+  background: linear-gradient(135deg, var(--danger), var(--warning));
+}
+
+.avatarCreditor {
+  background: linear-gradient(135deg, var(--success), var(--accent));
+}
+
+.personName {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.flowDirection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 0 16px;
+  color: var(--text-muted);
+}
+
+.arrow {
+  font-size: 18px;
+  color: var(--primary);
+  filter: drop-shadow(0 0 4px var(--primary-glow));
+}
+
+.flowAmount {
+  font-weight: 700;
+  font-size: 16px;
+  color: white;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.emptyState {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-secondary);
+}
+
+.settledBadge {
+  font-size: 40px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+/* User Ledger / Rohan's Breakdown Component */
+.breakdownCard {
+  padding: 24px;
+}
+
+.ledgerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.totalSummary {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.totalBox {
+  text-align: right;
+}
+
+.totalLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.totalValue {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.creditValue {
+  color: var(--success);
+}
+
+.debitValue {
+  color: var(--danger);
+}
+
+.ledgerTableWrapper {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ledgerTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+
+.ledgerTable th,
+.ledgerTable td {
+  padding: 14px 18px;
+}
+
+.ledgerTable th {
+  background: rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+  color: var(--text-secondary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.ledgerTable td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.ledgerRow:hover {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.cellDate {
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.cellDesc {
+  font-weight: 600;
+  color: white;
+}
+
+.cellOriginal {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.effectBadge {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.effectCredit {
+  background: rgba(16, 185, 129, 0.1);
+  color: #34d399;
+}
+
+.effectDebit {
+  background: rgba(244, 63, 94, 0.1);
+  color: #fb7185;
+}
+
+/* Individual Balance Grid */
+.balanceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.balanceCard {
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.balanceCardActive {
+  border-color: var(--primary);
+  background: rgba(99, 102, 241, 0.08);
+  box-shadow: 0 0 16px 0 rgba(99, 102, 241, 0.15);
+}
+
+.balanceCardAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+}
+
+.balanceCardAvatarActive {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+}
+
+.balanceCardName {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.balanceCardAmt {
+  font-weight: 700;
+  font-size: 16px;
+}
