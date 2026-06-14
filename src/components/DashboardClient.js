@@ -370,7 +370,7 @@ export default function DashboardClient({
                   
                   return (
                     <div key={rm.id} className={styles.splitRow} style={{ opacity: isActive ? 1 : 0.4 }}>
-                      <label style={{ display: 'flex', alignItems: center, gap: 10, flex: 1, cursor: isActive ? 'pointer' : 'not-allowed' }}>
+                      <label style={{ display: 'flex', alignItems: 'center', gap: 10, flex: 1, cursor: isActive ? 'pointer' : 'not-allowed' }}>
                         <input
                           type="checkbox"
                           checked={!!isChecked}
