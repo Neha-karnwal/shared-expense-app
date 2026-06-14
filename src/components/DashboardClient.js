@@ -183,7 +183,7 @@ export default function DashboardClient({
       {/* Header */}
       <header className={styles.header}>
         <div className={`container ${styles.headerContainer}`}>
-          <div className={styles.logo}>SplitFlat</div>
+          <div className={styles.logo}>SharedExpense</div>
           <div className={styles.userInfo}>
             <span className={styles.userName}>Logged in as <strong>{currentUser?.name}</strong></span>
             <button className="btn btn-secondary" onClick={handleLogoutClick} disabled={isPending}>

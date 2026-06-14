@@ -65,7 +65,7 @@ export default function LoginPage() {
     <div className={styles.container}>
       <div className={`${styles.loginCard} glass-panel`}>
         <div className={styles.header}>
-          <h1 className={styles.title}>SplitFlat</h1>
+          <h1 className={styles.title}>SharedExpense</h1>
           <p className={styles.subtitle}>Relational, messy expense reconciliator</p>
         </div>
 

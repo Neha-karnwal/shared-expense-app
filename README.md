@@ -1,6 +1,6 @@
-# SplitFlat: Shared Expenses App
+# SharedExpense: Shared Expenses App
 
-SplitFlat is a Next.js web application built to consolidate, cleanse, and resolve a messy roommate shared expense spreadsheet. It features interactive anomaly detection, timeline-based splits, and debt simplification.
+SharedExpense is a Next.js web application built to consolidate, cleanse, and resolve a messy roommate shared expense spreadsheet. It features interactive anomaly detection, timeline-based splits, and debt simplification.
 
 ## 🛠️ Technology Stack
 - **Framework**: Next.js (App Router, React 19)

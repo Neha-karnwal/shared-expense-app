@@ -28,7 +28,7 @@ export default async function ImportPage() {
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent'
           }}>
-            SplitFlat
+            SharedExpense
           </div>
           <div style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>
             Reconciliation Wizard
